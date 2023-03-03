@@ -1,0 +1,41 @@
+@import "./general/general.scss";
+
+.footer {
+    justify-content: end;
+    background-color: var(--background);
+
+    &__container {
+        @include container;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-inline: auto;
+        align-items: center;
+        padding: 1rem 0 3rem;
+        width: 100%;
+        max-width: 60rem;
+    }
+
+    &__divider {
+        border: 1px solid var(--text);
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    &__content {
+        @include font($fw400, $fs10);
+        color: var(--text);
+
+        &--colored {
+            font-weight: $fw700;
+            color: var(--shadow);
+            text-transform: uppercase;
+        }
+    }
+}
+
+.footer__content+.footer__content {
+    margin-top: 0.5rem;
+}

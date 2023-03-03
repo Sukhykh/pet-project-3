@@ -1,0 +1,18 @@
+:root {
+    --light: #FEFEFE;
+    --dark: #241F42;
+    --blueLight: #6FD9D6;
+    --blueDark: #30635F;
+}
+
+#light * {
+    --background: var(--light);
+    --text: var(--dark);
+    --shadow: var(--blueDark)
+}
+
+#dark * {
+    --background: var(--dark);
+    --text: var(--light);
+    --shadow: var(--blueLight);
+}

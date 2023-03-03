@@ -1,0 +1,56 @@
+@import "./general/general.scss";
+
+.city {
+    position: relative;
+    border: 2px solid var(--text);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 1px 1px 2px 2px var(--shadow);
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__title {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        @include font($fw400, $fs20);
+        color: var(--text);
+    }
+
+    &__temp {
+        position: absolute;
+        top: 50%;
+        left: 2rem;
+        transform: translateY(-50%);
+        @include font-italic($fw700, $fs30);
+        color: var(--text);
+        text-shadow: 1px 1px var(--shadow);
+    }
+
+    &__weather {
+        position: absolute;
+        bottom: 1rem;
+        right: 2rem;
+        @include font($fw700, $fs10);
+        color: var(--text);
+        text-transform: uppercase;
+    }
+
+    &__img {
+        width: 10rem;
+        height: auto;
+    }
+
+    &__delete {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        @include font($fw700, $fs10);
+        color: var(--background);
+        text-transform: uppercase;
+    }
+}

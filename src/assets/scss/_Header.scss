@@ -1,0 +1,60 @@
+@import "./general/general.scss";
+
+.header {
+    background-color: var(--background);
+
+    &__container {
+        @include container;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        padding: 2rem 0;
+        width: 100%;
+        max-width: 60rem;
+    }
+
+    &__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__title {
+        @include font($fw700, $fs25);
+        color: var(--text);
+        text-transform: uppercase;
+        text-shadow: 1px 1px var(--shadow);
+    }
+
+    &__sub-title {
+        @include font-italic($fw700, $fs15);
+        color: var(--shadow);
+    }
+
+    &__btn {
+        height: fit-content;
+        @include flexAllCenter;
+        @include font($fw700, $fs10);
+        padding: 1rem;
+        border: 2px solid var(--shadow);
+        border-radius: 50%;
+        color: var(--text);
+        text-align: center;
+        text-transform: uppercase;
+
+        transition: all 0.3s linear;
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 1px 1px 1px var(--shadow),
+                0 -1px 1px 1px var(--shadow),
+                1px 0 1px 1px var(--shadow),
+                -1px 0 1px 1px var(--shadow);
+        }
+    }
+}

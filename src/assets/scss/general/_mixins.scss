@@ -1,0 +1,30 @@
+// fonts
+
+@mixin font ($fw, $fs) {
+    font-family: $shantell;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: 120%;
+}
+
+@mixin font-italic ($fw, $fs) {
+    font-family: $shantell;
+    font-style: italic;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: 120%;
+}
+
+// container
+
+@mixin container {
+    margin-inline: auto;
+    max-width: 93vw;
+    width: 100%;
+}
+
+@mixin flexAllCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
