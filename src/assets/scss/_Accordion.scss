@@ -1,0 +1,87 @@
+@import "./general/general.scss";
+
+.accordion {
+    margin-top: 0.5rem;
+
+    &__title-box {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+        cursor: pointer;
+        border: 2px solid var(--text);
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        background-color: var(--background);
+        z-index: 10;
+    }
+
+    &__body {
+        display: flex;
+        transition: all 0.3s linear;
+    }
+
+    &__body-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin: 0.5rem;
+    }
+
+    &__title {
+        @include font($fw400, $fs10);
+        color: var(--text);
+        text-transform: uppercase;
+    }
+
+    &__icon {
+        @include font($fw400, $fs10);
+        color: var(--text);
+        text-transform: uppercase;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0.5rem;
+    }
+
+    &__temp {
+        @include font($fw700, $fs15);
+        color: var(--text);
+        z-index: 1;
+    }
+
+    &__weather {
+        @include font($fw400, $fs10);
+        color: var(--text);
+        text-transform: uppercase;
+        z-index: 1;
+    }
+
+    &__stats {
+        @include font($fw400, $fs10);
+        color: var(--text);
+    }
+
+    .height-true {
+        height: fit-content;
+        border-left: 2px solid var(--text);
+        border-right: 2px solid var(--text);
+        border-bottom: 2px solid var(--text);
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        background-color: var(--background);
+    }
+}
+
+.height-false {
+    height: 0;
+    scale: 0;
+}
+
+.borders {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

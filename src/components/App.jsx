@@ -24,6 +24,7 @@ const App = () => {
 	const [errors, setErrors] = React.useState('');
 	const [details, setDetails] = React.useState(false);
 	const [cityId, setCityId] = React.useState('');
+	const [cityData, setCityData] = React.useState([]);
 	
 	React.useEffect(() => {
 		themeFinder();
@@ -125,32 +126,13 @@ const App = () => {
 				<div className="app__wrapper">
 					<div className="app__divider">
 						<Header themeClicker={toggleTheme} title={theme} />
-						<main className="main">
-							<div className="main__container">								
-								<div className="main__wrapper">
-									{weatherData.map(item => {
-										return <CityWeather key={item.name} data={item}
-											delete={{ city, setCity, weatherData, setWeatherData }}/>
-									})}
-									<div className="add-city">
-										<div className="add-city__container">
-											<div className="add-city__wrapper">
-												<input className="add-city__title" type="text" placeholder='Start searching here' />
-												<button className="add-city__btn" onClick={(event) => cityAdder(event)}>add city</button>
-											</div>
-											<div className="add-city__errors">{errors}</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</main>
-						{/* {!details && <main className="main">
+						{!details && <main className="main">
 							<div className="main__container">
 								<div className="main__wrapper">
 									{weatherData.map(item => {
 										return <CityWeather key={item.name} data={item}
 											delete={{ city, setCity, weatherData, setWeatherData }}
-											details={{ details, setDetails, cityId, setCityId }} />
+											details={{ details, setDetails, cityId, setCityId, cityData, setCityData }} />
 									})}
 									<div className="add-city">
 										<div className="add-city__container">
@@ -163,8 +145,8 @@ const App = () => {
 									</div>
 								</div>
 							</div>
-						</main>} */}
-						{/* {details && <Details details={{ details, setDetails, cityId, setCityId }} />} */}
+						</main>}
+						{details && <Details details={{ details, setDetails, cityId, setCityId, cityData, setCityData }} />}
 					</div>
 					<Footer />
 				</div>

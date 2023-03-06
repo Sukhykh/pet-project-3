@@ -1,1 +1,149 @@
 @import "./general/general.scss";
+
+.complex-weather {
+    background-color: var(--background);
+
+    &__container {
+        @include container;
+    }
+
+    &__wrapper {
+        margin: 1rem auto;
+        width: 100%;
+        max-width: 60rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__top {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        border: 2px solid var(--text);
+        border-radius: 1rem;
+        box-shadow: 1px 1px 2px 2px var(--shadow);
+    }
+
+    &__left {
+        min-width: 50%;
+    }
+
+    &__right {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__city-box {
+        text-align: right;
+    }
+
+    &__date-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__day {
+        @include font-italic($fw700, $fs15);
+        color: var(--text);
+        text-transform: uppercase;
+    }
+
+    &__time {
+        @include font-italic($fw400, $fs10);
+        color: var(--text);
+        text-transform: uppercase;
+    }
+
+    &__temp {
+        @include font($fw700, $fs30);
+        color: var(--background);
+        text-shadow: 1px 1px var(--shadow);
+        margin-top: 2rem;
+    }
+
+    &__feels {
+        @include font-italic($fw400, $fs10);
+        color: var(--text);
+        text-decoration: underline
+    }
+
+    &__weather {
+        @include font($fw700, $fs10);
+        color: var(--text);
+        text-transform: uppercase;
+    }
+
+    &__stats {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+
+    &__stats-title {
+        @include font-italic($fw400, $fs10);
+        color: var(--text);
+        text-decoration: underline
+    }
+
+    &__stats-item {
+        @include font-italic($fw400, $fs10);
+        color: var(--text);
+        margin-top: 0.5rem;
+    }
+
+    &__city-title {
+        @include font($fw700, $fs20);
+        color: var(--background);
+        text-transform: uppercase;
+        text-shadow: 1px 1px var(--shadow);
+    }
+
+    &__country-title {
+        @include font-italic($fw700, $fs20);
+        color: var(--background);
+        text-shadow: 1px 1px var(--shadow);
+    }
+
+    &__props {
+        margin-top: 2rem;
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        margin-top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        padding: 0.5rem 2rem;
+
+        @include font($fw700, $fs10);
+        color: var(--background);
+        border: 2px solid var(--shadow);
+        border-radius: 1rem;
+        background-color: var(--text);
+        text-transform: uppercase;
+
+        transition: all 0.3s linear;
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 1px 1px 1px var(--shadow),
+                0 -1px 1px 1px var(--shadow),
+                1px 0 1px 1px var(--shadow),
+                -1px 0 1px 1px var(--shadow);
+        }
+    }
+
+    &__props-title {
+        @include font-italic($fw400, $fs10);
+        color: var(--text);
+        text-transform: uppercase;
+    }
+}

@@ -8,7 +8,7 @@
 #light * {
     --background: var(--light);
     --text: var(--dark);
-    --shadow: var(--blueDark)
+    --shadow: var(--blueDark);
 }
 
 #dark * {

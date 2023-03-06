@@ -11,6 +11,7 @@
         position: relative;
         display: flex;
         justify-content: flex-end;
+        cursor: pointer;
     }
 
     &__title {
@@ -52,5 +53,6 @@
         @include font($fw700, $fs10);
         color: var(--background);
         text-transform: uppercase;
+        cursor: pointer;
     }
 }

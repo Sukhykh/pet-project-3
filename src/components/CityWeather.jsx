@@ -40,10 +40,11 @@ const CityWeather = React.memo((props) => {
         }
     }
 
-    // const goForDetails = () => {
-    //     props.details.setCityId(props.data.id)
-    //     props.details.setDetails(!props.details.details)
-    // }
+    const goForDetails = () => {
+        props.details.setCityId(props.data.id)
+        props.details.setCityData(props.data)
+        props.details.setDetails(!props.details.details)
+    }
 
     const deleteFromBar = (event) => {
         event.stopPropagation()
@@ -60,7 +61,6 @@ const CityWeather = React.memo((props) => {
 
         let dataForDelete = props.delete.weatherData;
         let cityForDelete = props.delete.city;
-        console.log(dataForDelete, cityForDelete)
         for (let i = 0; i < dataForDelete.length; i++) {
             if (cityForDelete[i] === props.data.name) {
                 cityForDelete.splice(i, 1)
@@ -72,17 +72,15 @@ const CityWeather = React.memo((props) => {
 
         props.delete.setWeatherData(dataForDelete);
         props.delete.setCity(cityForDelete);
-        console.log(props.delete.city, props.delete.weatherData)
         event.target.parentNode.remove()
     }
 
     return (
-        // <div onClick={goForDetails} className="city" style={{ width: `${styledWidth()}px` }}>
-        <div className="city" style={{ width: `${styledWidth()}px` }}>
+        <div onClick={goForDetails} className="city" style={{ width: `${styledWidth()}px` }}>
             <div className="city__container" style={{ backgroundColor: `${createRandomColor()}` }} >
                 <div className="city__wrapper">
                     <div className="city__title">{props.data.name}</div>
-                    <div className="city__temp">{props.data.main.temp > 0 ? '+' + props.data.main.temp : props.data.main.temp}</div>
+                    <div className="city__temp">{props.data.main.temp > 0 ? '+' + props.data.main.temp : props.data.main.temp }</div>
                     <div className="city__weather">{props.data.weather[0].description}</div>
                     <img className="city__img" src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`} alt="weather.ico" />
                 </div>

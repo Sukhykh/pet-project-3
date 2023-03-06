@@ -10,7 +10,7 @@ const Header = (props) => {
                         <h1 className="header__title">Weather</h1>
                         <h2 className="header__sub-title">by location</h2>
                     </div>
-                    <div className="header__btn" onClick={props.themeClicker}>{props.title + ' theme'}</div>
+                    <div className="header__btn" onClick={props.themeClicker}>{props.title === 'light' ? 'to darck' : 'to light'}</div>
                 </div>
             </div>
         </header>
