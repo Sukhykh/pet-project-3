@@ -129,11 +129,6 @@ const App = () => {
 						{!details && <main className="main">
 							<div className="main__container">
 								<div className="main__wrapper">
-									{weatherData.map(item => {
-										return <CityWeather key={item.name} data={item}
-											delete={{ city, setCity, weatherData, setWeatherData }}
-											details={{ details, setDetails, cityId, setCityId, cityData, setCityData }} />
-									})}
 									<div className="add-city">
 										<div className="add-city__container">
 											<div className="add-city__wrapper">
@@ -143,6 +138,11 @@ const App = () => {
 											<div className="add-city__errors">{errors}</div>
 										</div>
 									</div>
+									{weatherData.map(item => {
+										return <CityWeather key={item.name} data={item}
+											delete={{ city, setCity, weatherData, setWeatherData }}
+											details={{ details, setDetails, cityId, setCityId, cityData, setCityData }} />
+									})}
 								</div>
 							</div>
 						</main>}
