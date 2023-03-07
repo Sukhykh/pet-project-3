@@ -5,13 +5,23 @@
 
     &__container {
         @include container;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 
     &__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
         align-items: end;
         padding: 1.5rem 0;
         width: 100%;
@@ -19,7 +29,12 @@
     }
 
     &__title-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 0.5rem;
     }
@@ -37,6 +52,8 @@
     }
 
     &__btn {
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         @include flexAllCenter;
         @include font($fw700, $fs10);
@@ -49,10 +66,18 @@
         text-transform: uppercase;
         cursor: pointer;
 
+        -webkit-transition: all 0.3s linear;
+
+        -o-transition: all 0.3s linear;
+
         transition: all 0.3s linear;
 
         &:hover,
         &:focus {
+            -webkit-box-shadow: 0 1px 1px 1px var(--shadow),
+                0 -1px 1px 1px var(--shadow),
+                1px 0 1px 1px var(--shadow),
+                -1px 0 1px 1px var(--shadow);
             box-shadow: 0 1px 1px 1px var(--shadow),
                 0 -1px 1px 1px var(--shadow),
                 1px 0 1px 1px var(--shadow),

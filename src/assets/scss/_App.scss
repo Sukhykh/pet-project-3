@@ -10,8 +10,15 @@
 
     &__wrapper {
         height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
@@ -31,15 +38,25 @@
         margin: 1rem auto;
         width: 100%;
         max-width: 60rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         row-gap: 1rem;
+        -webkit-column-gap: 1rem;
+        -moz-column-gap: 1rem;
         column-gap: 1rem;
     }
 
     &__city-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 
@@ -50,19 +67,29 @@
     border: 2px solid var(--text);
     border-radius: 1rem;
     overflow: hidden;
+    -webkit-box-shadow: 1px 1px 2px 2px var(--shadow);
     box-shadow: 1px 1px 2px 2px var(--shadow);
     width: 27.5rem;
     height: 10.4rem;
     background-color: var(--shadow);
 
     &__container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
         justify-content: end;
         padding: 1rem;
     }
 
     &__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         gap: 0.5rem;
         height: 100%;
@@ -76,6 +103,30 @@
         color: var(--background);
         padding-bottom: 0.5rem;
         border-bottom: 1px solid var(--text);
+
+        &::-webkit-input-placeholder {
+            @include font-italic($fw400, $fs15);
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        &::-moz-placeholder {
+            @include font-italic($fw400, $fs15);
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        &:-ms-input-placeholder {
+            @include font-italic($fw400, $fs15);
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        &::-ms-input-placeholder {
+            @include font-italic($fw400, $fs15);
+            color: var(--text);
+            opacity: 0.7;
+        }
 
         &::placeholder {
             @include font-italic($fw400, $fs15);
@@ -99,6 +150,10 @@
         text-transform: uppercase;
         padding: 0.5rem;
 
+        -webkit-transition: all 0.3s linear;
+
+        -o-transition: all 0.3s linear;
+
         transition: all 0.3s linear;
 
         &:hover,
@@ -116,6 +171,8 @@
         @include font($fw400, $fs15);
         color: var(--text);
         text-align: center;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
         transform: translateX(-50%);
         width: 100%;
     }

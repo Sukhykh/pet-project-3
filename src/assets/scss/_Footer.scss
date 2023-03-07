@@ -1,6 +1,8 @@
 @import "./general/general.scss";
 
 .footer {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: end;
     background-color: var(--background);
 
@@ -9,9 +11,16 @@
     }
 
     &__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         margin-inline: auto;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         padding: 1rem 0;
         width: 100%;
